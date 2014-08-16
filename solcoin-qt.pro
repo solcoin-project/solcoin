@@ -9,15 +9,24 @@ DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
 
+# build a statically linked executable
+#CONFIG += static
+
 # for boost 1.37, add -mt to the boost libraries
 # use: qmake BOOST_LIB_SUFFIX=-mt
 # for boost thread win32 with _win32 sufix
 # use: BOOST_THREAD_LIB_SUFFIX=_win32-...
 # or when linking against a specific BerkelyDB version: BDB_LIB_SUFFIX=-4.8
 
-# Dependency library locations can be customized with:
-#    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
-#    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
+# custom dependency locations
+#BOOST_INCLUDE_PATH=
+#BOOST_LIB_PATH=
+#BDB_INCLUDE_PATH=
+#BDB_LIB_PATH=
+#OPENSSL_INCLUDE_PATH=
+#OPENSSL_LIB_PATH=
+#MINIUPNPC_INCLUDE_PATH=
+#MINIUPNPC_LIB_PATH=
 
 OBJECTS_DIR = build
 MOC_DIR = build
