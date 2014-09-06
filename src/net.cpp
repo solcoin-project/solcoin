@@ -10,6 +10,8 @@
 #include "ui_interface.h"
 #include "script.h"
 
+#include "config.h"
+
 #ifdef WIN32
 #include <string.h>
 #endif
@@ -1178,13 +1180,6 @@ void MapPort(bool)
     // Intentionally left blank.
 }
 #endif
-
-
-
-
-
-
-
 
 
 /* see config.h for list of DNS seeds
