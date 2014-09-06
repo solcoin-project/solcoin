@@ -1187,19 +1187,17 @@ void MapPort(bool)
 
 
 
-// DNS seeds
-// Each pair gives a source name and a seed name.
-// The first name is used as information source for addrman.
-// The second name should resolve to a list of seed addresses.
+/* see config.h for list of DNS seeds
+   Each pair gives a source name and a seed name.
+   The first name is used as information source for addrman.
+   The second name should resolve to a list of seed addresses. */
 static const char *strMainNetDNSSeed[][2] = {
-    {"stolendata.net", "solcoinseeds.stolendata.net"},
-    {"z80.guru", "solcoinseeds.z80.guru"},
-    {"tru.io", "solcoinseeds.tru.io"},
+    COIN_MAINNET_DNS_SEEDS,
     {NULL, NULL}
 };
 
 static const char *strTestNetDNSSeed[][2] = {
-    {"solcoin.testnet.seed", "doesnotexist"},
+    COIN_TESTNET_DNS_SEEDS,
     {NULL, NULL}
 };
 
@@ -1235,12 +1233,8 @@ void ThreadDNSAddressSeed()
     printf("%d addresses found from DNS seeds\n", found);
 }
 
-/* 5 hardcoded nodes will suffice for now; future official nodes
-   will be stored in the DNS seeds described above */
-unsigned int pnSeed[] =
-{
-    0x26f6f3a2, 0xe89de2bc, 0xf385f050, 0x1886f3a2, 0x86133eb2
-};
+// see config.h for list of hardcoded nodes
+unsigned int pnSeed[] = COIN_HARDCODED_NODES;
 
 void DumpAddresses()
 {

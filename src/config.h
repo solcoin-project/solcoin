@@ -25,6 +25,8 @@
 #define COIN_MAX_MONEY                  696342000   // Maximum amount of SOL that can be sent in a single tx
 #define COIN_MINTXFEE                   20000       // Transaction- and relay fees, in Satoshis
 #define COIN_MINRELAYTXFEE              20000
+#define COIN_DUST_SOFT_LIMIT            10000       // 0.0001 SOL
+#define COIN_DUST_HARD_LIMIT            100         // 0.000001 SOL
 
 #define SOLCOIN_OLD_TARGET_TIMESPAN     11304       // Solcoin: For block 0-14999
 #define COIN_BLOCK_TARGET_TIME          188         // 188 seconds (3.14 minutes) between blocks
@@ -36,9 +38,15 @@
 #define COIN_PCHMESSAGE_START           { 0xfe, 0xc1, 0xba, 0xdc }
 
 #define COIN_RPC_PORT                   24360       // Port for RPC calls (mining, stats etc.)
-#define COIN_P2P_PORT                   24361       // Port for blockchain exchange
+#define COIN_P2P_PORT                   24361       // Port for block chain exchange
 #define COIN_RPC_TESTNET_PORT           24362       // Solcoin has no testnet; defined anyway to avoid collisions
 #define COIN_P2P_TESTNET_PORT           24363
+
+#define COIN_MAINNET_DNS_SEEDS          {"stolendata.net", "solcoinseeds.stolendata.net"}, \
+                                        {"z80.guru", "solcoinseeds.z80.guru"}, \
+                                        {"tru.io", "solcoinseeds.tru.io"}
+#define COIN_TESTNET_DNS_SEEDS          {"solcoin.testnet.seed", "doesnotexist"}
+#define COIN_HARDCODED_NODES            { 0x26f6f3a2, 0xe89de2bc, 0xf385f050, 0x1886f3a2, 0x86133eb2 }
 
 #endif
 

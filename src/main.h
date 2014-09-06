@@ -52,9 +52,9 @@ static const unsigned int UNDOFILE_CHUNK_SIZE = 0x100000; // 1 MiB
 /** Fake height value used in CCoins to signify they are only in the memory pool (since 0.8) */
 static const unsigned int MEMPOOL_HEIGHT = 0x7FFFFFFF;
 /** Dust Soft Limit, allowed with additional fee per output */
-static const int64 DUST_SOFT_LIMIT = 10000; // 0.0001 SOL
+static const int64 DUST_SOFT_LIMIT = COIN_DUST_SOFT_LIMIT;
 /** Dust Hard Limit, ignored as wallet inputs (mininput default) */
-static const int64 DUST_HARD_LIMIT = 100;   // 0.000001 SOL mininput
+static const int64 DUST_HARD_LIMIT = COIN_DUST_HARD_LIMIT;
 /** No amount larger than this (in satoshi) is valid */
 static const int64 MAX_MONEY = COIN_MAX_MONEY * COIN;
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
