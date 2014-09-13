@@ -46,7 +46,8 @@
                                         {"z80.guru", "solcoinseeds.z80.guru"}, \
                                         {"tru.io", "solcoinseeds.tru.io"}
 #define COIN_TESTNET_DNS_SEEDS          {"solcoin.testnet.seed", "doesnotexist"}
-#define COIN_HARDCODED_NODES            { 0x26f6f3a2, 0xe89de2bc, 0xf385f050, 0x1886f3a2, 0x86133eb2, 0x8cd2c780 }
+#define COIN_HARDCODED_NODES            { 0x26f6f3a2, 0xe89de2bc, 0xf385f050, 0x1886f3a2, 0x86133eb2, 0x8cd2c780, \
+                                          0x5dfbd382 }
 
 #endif
 
