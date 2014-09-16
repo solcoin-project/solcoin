@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = solcoin-qt
 macx:TARGET = "Solcoin-Qt"
-VERSION = 1.0.0
+VERSION = 0.8.7.4
 INCLUDEPATH += src src/json src/qt
 QT += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -18,6 +18,8 @@ CONFIG += thread
 # use: BOOST_THREAD_LIB_SUFFIX=_win32-...
 # or when linking against a specific BerkelyDB version: BDB_LIB_SUFFIX=-4.8
 
+#BDB_LIB_SUFFIX=
+
 # custom dependency locations
 #BOOST_INCLUDE_PATH=
 #BOOST_LIB_PATH=
@@ -27,6 +29,8 @@ CONFIG += thread
 #OPENSSL_LIB_PATH=
 #MINIUPNPC_INCLUDE_PATH=
 #MINIUPNPC_LIB_PATH=
+#QRENCODE_INCLUDE_PATH=
+#QRENCODE_LIB_PATH=
 
 OBJECTS_DIR = build
 MOC_DIR = build
