@@ -37,21 +37,22 @@ namespace Checkpoints
     // + Contains no strange transactions
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        (     2, uint256("0x65f69a4591090928f98478622058f614e5f3db42a16f1d99885c8ecad2ecbc9f") )
-        (   512, uint256("0x2c5ad2a937958da366409db37d08cf9b75fe8695d4897d403e54dc078bb30b61") )
-        (  3141, uint256("0x85dc531ed9c6c955a27b004d613c7f810f3b9d9c2fac9c4e6f160e4a727fba47") )
-        (  7368, uint256("0xec9b27bbdaf6abdc984cbc24f08519a31488e58f5ad90e791b4f0766b5418460") )
-        ( 10000, uint256("0x25a8e9c4fc3baca9c6b4200f7b34754845e7e3a3d25226ad0c371ecdfd5f236a") )
-        ( 17600, uint256("0x3a03d650a9b11dccdf38117652eeadbbecd016cb9895341c08456ddc885c7685") )
-        ( 57023, uint256("0xb8ccbc4bb9765ca2d6e7eea5bb6c7ffe3768a24dd2fb49319d217c408a725031") )
-        ( 98996, uint256("0xd1eeaa723bff270d1483424beace793a3487721e964697303562b24a25c69f4d") );
+        (      2, uint256("0x65f69a4591090928f98478622058f614e5f3db42a16f1d99885c8ecad2ecbc9f") )
+        (    512, uint256("0x2c5ad2a937958da366409db37d08cf9b75fe8695d4897d403e54dc078bb30b61") )
+        (   3141, uint256("0x85dc531ed9c6c955a27b004d613c7f810f3b9d9c2fac9c4e6f160e4a727fba47") )
+        (   7368, uint256("0xec9b27bbdaf6abdc984cbc24f08519a31488e58f5ad90e791b4f0766b5418460") )
+        (  10000, uint256("0x25a8e9c4fc3baca9c6b4200f7b34754845e7e3a3d25226ad0c371ecdfd5f236a") )
+        (  17600, uint256("0x3a03d650a9b11dccdf38117652eeadbbecd016cb9895341c08456ddc885c7685") )
+        (  57023, uint256("0xb8ccbc4bb9765ca2d6e7eea5bb6c7ffe3768a24dd2fb49319d217c408a725031") )
+        (  98996, uint256("0xd1eeaa723bff270d1483424beace793a3487721e964697303562b24a25c69f4d") )
+        ( 173226, uint256("0x6b1ae1ad5029b352dfd983144f66d47e3feff8008fa40b8a670222812cc42899") );
 
     static const CCheckpointData data = {
         &mapCheckpoints,
-        1408219938, // * UNIX timestamp of last checkpoint block
-        240955,     // * total number of transactions between genesis and last checkpoint
+        1422562915, // * UNIX timestamp of last checkpoint block
+        465511,     // * total number of transactions between genesis and last checkpoint
                     // (the tx=... number in the SetBestChain debug.log lines)
-        800.0       // * estimated number of transactions per day after checkpoint
+        100.0       // * estimated number of transactions per day after checkpoint
     };
 
     // Solcoin has no testnet
