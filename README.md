@@ -1,6 +1,5 @@
-Solcoin
+Solcoin [![Build Status](https://travis-ci.org/solcoin-project/solcoin.svg?branch=master)](https://travis-ci.org/solcoin-project/solcoin)
 =======
-[![Build Status](https://travis-ci.org/solcoin-project/solcoin.svg?branch=master)](https://travis-ci.org/solcoin-project/solcoin)
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2015 Litecoin Developers
