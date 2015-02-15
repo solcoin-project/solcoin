@@ -1,5 +1,7 @@
 #include "bitcoinunits.h"
 
+#include "config.h"
+
 #include <QStringList>
 
 BitcoinUnits::BitcoinUnits(QObject *parent):
@@ -34,9 +36,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("SOL");
-    case mBTC: return QString("mSOL");
-    case uBTC: return QString::fromUtf8("μSOL");
+    case BTC: return QString(COIN_TICKER_NAME);
+    case mBTC: return QString("m" COIN_TICKER_NAME);
+    case uBTC: return QString::fromUtf8("μ" COIN_TICKER_NAME);
     default: return QString("???");
     }
 }
@@ -45,9 +47,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Solcoins");
-    case mBTC: return QString("Milli-Solcoins (1 / 1,000)");
-    case uBTC: return QString("Micro-Solcoins (1 / 1,000,000)");
+    case BTC: return QString(COIN_UNITS_NAME);
+    case mBTC: return QString("Milli-" COIN_UNITS_NAME " (1 / 1,000)");
+    case uBTC: return QString("Micro-" COIN_UNITS_NAME " (1 / 1,000,000)");
     default: return QString("???");
     }
 }

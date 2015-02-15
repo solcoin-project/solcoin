@@ -6,6 +6,8 @@
 #include "netbase.h"
 #include "optionsmodel.h"
 
+#include "config.h"
+
 #include <QDir>
 #include <QIntValidator>
 #include <QLocale>
@@ -225,7 +227,7 @@ void OptionsDialog::showRestartWarning_Proxy()
 {
     if(!fRestartWarningDisplayed_Proxy)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Solcoin."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting " COIN_PRINCIPAL_NAME "."), QMessageBox::Ok);
         fRestartWarningDisplayed_Proxy = true;
     }
 }
@@ -234,7 +236,7 @@ void OptionsDialog::showRestartWarning_Lang()
 {
     if(!fRestartWarningDisplayed_Lang)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Solcoin."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting " COIN_PRINCIPAL_NAME "."), QMessageBox::Ok);
         fRestartWarningDisplayed_Lang = true;
     }
 }

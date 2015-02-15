@@ -13,6 +13,8 @@
 #include "coincontrol.h"
 #include "coincontroldialog.h"
 
+#include "config.h"
+
 #include <QMessageBox>
 #include <QTextDocument>
 #include <QScrollBar>
@@ -32,7 +34,7 @@ SendCoinsDialog::SendCoinsDialog(QWidget *parent) :
 #endif
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a Solcoin address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
+    ui->lineEditCoinControlChange->setPlaceholderText(tr("Enter a " COIN_PRINCIPAL_NAME " address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
 #endif
 
     addEntry();

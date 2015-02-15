@@ -8,6 +8,8 @@
 #include "optionsmodel.h"
 #include "addresstablemodel.h"
 
+#include "config.h"
+
 #include <QApplication>
 #include <QClipboard>
 
@@ -24,7 +26,7 @@ SendCoinsEntry::SendCoinsEntry(QWidget *parent) :
 #if QT_VERSION >= 0x040700
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
-    ui->payTo->setPlaceholderText(tr("Enter a Solcoin address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
+    ui->payTo->setPlaceholderText(tr("Enter a " COIN_PRINCIPAL_NAME " address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
 #endif
     setFocusPolicy(Qt::TabFocus);
     setFocusProxy(ui->payTo);

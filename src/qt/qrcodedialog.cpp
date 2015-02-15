@@ -13,6 +13,8 @@
 
 #include <qrencode.h>
 
+#include <config.h>
+
 QRCodeDialog::QRCodeDialog(const QString &addr, const QString &label, bool enableReq, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::QRCodeDialog),
@@ -85,7 +87,7 @@ void QRCodeDialog::genCode()
 
 QString QRCodeDialog::getURI()
 {
-    QString ret = QString("solcoin:%1").arg(address);
+    QString ret = QString(COIN_LOWER_NAME ":%1").arg(address);
     int paramCount = 0;
 
     ui->outUri->clear();

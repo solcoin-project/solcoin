@@ -10,6 +10,8 @@
 #include "walletmodel.h"
 #include "wallet.h"
 
+#include "config.h"
+
 #include <QClipboard>
 
 #include <string>
@@ -24,11 +26,11 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a Solcoin address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a " COIN_PRINCIPAL_NAME " address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a Solcoin address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter Solcoin signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a " COIN_PRINCIPAL_NAME " address (e.g. 8eQe2DtqZ4XuMAiZpmM8Uvicno7SNXCTc9)"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter " COIN_PRINCIPAL_NAME " signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);

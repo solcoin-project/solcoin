@@ -1,4 +1,5 @@
 // Copyright (c) 2009-2012 Bitcoin Developers
+// Copyright (c) 2015-     Solcoin Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,6 +9,8 @@
 #include "base58.h"
 
 #include <boost/lexical_cast.hpp>
+
+#include "config.h"
 
 #define printf OutputDebugStringF
 
@@ -36,7 +39,7 @@ Value importprivkey(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
-            "importprivkey <solcoinprivkey> [label] [rescan=true]\n"
+            "importprivkey <" COIN_LOWER_NAME "privkey> [label] [rescan=true]\n"
             "Adds a private key (as returned by dumpprivkey) to your wallet.");
 
     string strSecret = params[0].get_str();
@@ -79,13 +82,13 @@ Value dumpprivkey(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "dumpprivkey <solcoinaddress>\n"
-            "Reveals the private key corresponding to <solcoinaddress>.");
+            "dumpprivkey <" COIN_LOWER_NAME "address>\n"
+            "Reveals the private key corresponding to <" COIN_LOWER_NAME "address>.");
 
     string strAddress = params[0].get_str();
     CBitcoinAddress address;
     if (!address.SetString(strAddress))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Solcoin address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid " COIN_PRINCIPAL_NAME " address");
     CKeyID keyID;
     if (!address.GetKeyID(keyID))
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");

@@ -67,7 +67,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Solcoin Signed Message:\n";
+const string strMessageMagic = COIN_PRINCIPAL_NAME " Signed Message:\n";
 
 double dHashesPerSec = 0.0;
 int64 nHPSTimerStart = 0;
@@ -2786,7 +2786,7 @@ bool InitBlockIndex() {
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 1772 * COIN;
+        txNew.vout[0].nValue = COIN_GENESIS_REWARD * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
@@ -4557,7 +4557,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         return false;
 
     //// debug print
-    printf("SolcoinMiner:\n");
+    printf(COIN_PRINCIPAL_NAME "Miner:\n");
     printf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -4566,7 +4566,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("SolcoinMiner : generated block is stale");
+            return error(COIN_PRINCIPAL_NAME "Miner : generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -4580,17 +4580,17 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         // Process this block the same as if we had received it from another node
         CValidationState state;
         if (!ProcessBlock(state, NULL, pblock))
-            return error("SolcoinMiner : ProcessBlock, block not accepted");
+            return error(COIN_PRINCIPAL_NAME "Miner : ProcessBlock, block not accepted");
     }
 
     return true;
 }
 
-void static SolcoinMiner(CWallet *pwallet)
+void static CoinMiner(CWallet *pwallet)
 {
-    printf("SolcoinMiner started\n");
+    printf(COIN_PRINCIPAL_NAME "Miner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("solcoin-miner");
+    RenameThread(COIN_LOWER_NAME "-miner");
 
     // Each thread has its own key and counter
     CReserveKey reservekey(pwallet);
@@ -4612,7 +4612,7 @@ void static SolcoinMiner(CWallet *pwallet)
         CBlock *pblock = &pblocktemplate->block;
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-        printf("Running SolcoinMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
+        printf("Running " COIN_PRINCIPAL_NAME "Miner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
                ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         //
@@ -4711,7 +4711,7 @@ void static SolcoinMiner(CWallet *pwallet)
     } }
     catch (boost::thread_interrupted)
     {
-        printf("SolcoinMiner terminated\n");
+        printf(COIN_PRINCIPAL_NAME "Miner terminated\n");
         throw;
     }
 }
@@ -4736,7 +4736,7 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
 
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&SolcoinMiner, pwallet));
+        minerThreads->create_thread(boost::bind(&CoinMiner, pwallet));
 }
 
 // Amount compression:

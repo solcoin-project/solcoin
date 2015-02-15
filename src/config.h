@@ -12,6 +12,13 @@
 // Uncomment this define to mine a new genesis block if the hashes don't match - only for forking a new coin!
 //#define MINE_GENESIS_BLOCK              1
 
+#define COIN_PRINCIPAL_NAME	    "Solcoin"
+#define COIN_UPPER_NAME         "SOLCOIN"
+#define COIN_LOWER_NAME         "solcoin"
+#define COIN_UNITS_NAME         "Solcoins"
+#define COIN_TICKER_NAME        "SOL"
+#define COIN_CLIENT_NAME        "Sol"
+
 // The genesis message can't be longer than 91 bytes (not characters), excluding the terminating null byte
 #define COIN_GENESIS_MSG                "Söndag 5:e januari 2014 - MtGox registrerar för andra gången BTC på över $1000."
 #define COIN_GENESIS_HASH               "0x579b9ba9d7e8de5fbcc9b76cc90324f4b5d2e95855eeb67ed23c85e73cc2e54d"
@@ -21,6 +28,8 @@
 #define COIN_GENESIS_BITS               0x1d07ffff
 #define COIN_DIFFICULTY_SHIFT           29          // Lowest network diff. is 0.12499
 #define COIN_COINBASE_MATURITY          72
+
+#define COIN_GENESIS_REWARD             1772	    // Symbolical (the genesis output can't be spent)
 
 #define COIN_MAX_MONEY                  696342000   // Maximum amount of SOL that can be sent in a single tx
 #define COIN_MINTXFEE                   20000       // Transaction- and relay fees, in Satoshis
