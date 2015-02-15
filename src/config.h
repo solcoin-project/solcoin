@@ -12,7 +12,7 @@
 // Uncomment this define to mine a new genesis block if the hashes don't match - only for forking a new coin!
 //#define MINE_GENESIS_BLOCK              1
 
-#define COIN_PRINCIPAL_NAME	    "Solcoin"
+#define COIN_PRINCIPAL_NAME     "Solcoin"
 #define COIN_UPPER_NAME         "SOLCOIN"
 #define COIN_LOWER_NAME         "solcoin"
 #define COIN_UNITS_NAME         "Solcoins"
