@@ -12,12 +12,12 @@
 // Uncomment this define to mine a new genesis block if the hashes don't match - only for forking a new coin!
 //#define MINE_GENESIS_BLOCK              1
 
-#define COIN_PRINCIPAL_NAME     "Solcoin"
-#define COIN_UPPER_NAME         "SOLCOIN"
-#define COIN_LOWER_NAME         "solcoin"
-#define COIN_UNITS_NAME         "Solcoins"
-#define COIN_TICKER_NAME        "SOL"
-#define COIN_CLIENT_NAME        "Sol"
+#define COIN_PRINCIPAL_NAME             "Solcoin"
+#define COIN_UPPER_NAME                 "SOLCOIN"
+#define COIN_LOWER_NAME                 "solcoin"
+#define COIN_UNITS_NAME                 "Solcoins"
+#define COIN_TICKER_NAME                "SOL"
+#define COIN_CLIENT_NAME                "Sol"
 
 // The genesis message can't be longer than 91 bytes (not characters), excluding the terminating null byte
 #define COIN_GENESIS_MSG                "Söndag 5:e januari 2014 - MtGox registrerar för andra gången BTC på över $1000."
