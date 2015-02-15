@@ -14,11 +14,9 @@ before_install:
 script:
   - cd src
   - make -j 2 -f makefile.unix USE_UPNP=-
-  - make clean -f makefile.unix
   - cd ..
   - CFLAGS="-O1" CXXFLAGS="-O1" qmake RELEASE=1 USE_UPNP=-
   - make -j 2
-  - make clean
 notifications:
   irc:
     channels:
